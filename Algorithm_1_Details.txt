@@ -1,0 +1,47 @@
+Algorithm 1 
+
+Here is an algorithm to perform a common computing task. Try to work through the instructions on paper, using the following list as a starting point: [2, 7, 3, 9, 2]. What does the algorithm do?
+
+
+	1.     Imagine you have a list of numbers.
+	2.     Start a counter at zero.
+	3.     Look at the first two numbers.
+	4.     If the first number is greater than the second, then swap the numbers and increase the counter by one.
+	5.     Repeat steps 3 and 4 for the second and third numbers, then the third and fourth, and so on until you reach the end of the list.
+	6.     If your counter is zero, then you have finished. If it is not zero then go back to step 2.
+
+Answer:
+
+
+swapCounter = 1
+listItemCounter = 0
+nextListItemCounter = 1
+list1 = [2, 7, 3, 9, 2]
+numberOfListItems=len(list1) - 1
+print numberOfListItems
+print list1
+print "#################"
+
+while swapCounter != 0:
+    swapCounter = 0
+    listItemCounter = 0
+    nextListItemCounter = 1
+    while listItemCounter < numberOfListItems:
+                if list1[listItemCounter] <= list1[nextListItemCounter]:
+                        listItemCounter += 1
+                        nextListItemCounter += 1
+                        print list1
+                        print swapCounter
+                else:
+                        tempSwap = list1[listItemCounter]
+                        list1[listItemCounter] = list1[nextListItemCounter]
+                        list1[nextListItemCounter] = tempSwap
+                        swapCounter += 1
+                        listItemCounter += 1
+                        nextListItemCounter += 1
+                        print list1
+                        print swapCounter
+
+print "#################"
+print list1
+print swapCounter
